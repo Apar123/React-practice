@@ -4,7 +4,10 @@ import Signup from './components/Signup';
 import MemoFunction from './components/MemoFunction';
 import Context from './components/Context';
 import Parent from './components/UseCallback/Parent';
+import UseContext from './components/UseContext';
 const MyContext = createContext();
+
+/* create context, provider, consumer */
 
 export default function App() {
   const obj = {
@@ -18,7 +21,8 @@ export default function App() {
         {/* <Signup /> */}
         {/* <Context /> */}
         {/* <MemoFunction /> */}
-        <Parent />
+        {/* <Parent /> */}
+        <UseContext />
       </MyContext.Provider>
     </div>
   )
