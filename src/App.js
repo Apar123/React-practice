@@ -3,6 +3,7 @@ import './App.css';
 import Signup from './components/Signup';
 import MemoFunction from './components/MemoFunction';
 import Context from './components/Context';
+import Parent from './components/UseCallback/Parent';
 const MyContext = createContext();
 
 export default function App() {
@@ -16,7 +17,8 @@ export default function App() {
       <MyContext.Provider value={obj}>
         {/* <Signup /> */}
         {/* <Context /> */}
-        <MemoFunction />
+        {/* <MemoFunction /> */}
+        <Parent />
       </MyContext.Provider>
     </div>
   )
