@@ -1,0 +1,22 @@
+.parentContainer {
+  background-color: rgb(244, 244, 244);
+  height: 100vh;
+  width: 100vw;
+}
+
+.signup-form {
+  width: 70%;
+  height: max-content;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+}
+
+.error {
+  color: red;
+  font-weight: 500;
+}
