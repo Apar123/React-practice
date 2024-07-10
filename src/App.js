@@ -1,6 +1,7 @@
 import React, { createContext } from 'react';
 import './App.css';
 import Signup from './components/Signup';
+import MemoFunction from './components/MemoFunction';
 import Context from './components/Context';
 const MyContext = createContext();
 
@@ -14,7 +15,8 @@ export default function App() {
     <div>
       <MyContext.Provider value={obj}>
         {/* <Signup /> */}
-        <Context />
+        {/* <Context /> */}
+        <MemoFunction />
       </MyContext.Provider>
     </div>
   )
