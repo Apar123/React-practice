@@ -5,6 +5,7 @@ import MemoFunction from './components/MemoFunction';
 import Context from './components/Context';
 import Parent from './components/UseCallback/Parent';
 import UseContext from './components/UseContext';
+import UserRef from './components/UseRef';
 const MyContext = createContext();
 
 /* create context, provider, consumer */
@@ -22,7 +23,8 @@ export default function App() {
         {/* <Context /> */}
         {/* <MemoFunction /> */}
         {/* <Parent /> */}
-        <UseContext />
+        {/* <UseContext /> */}
+        <UserRef />
       </MyContext.Provider>
     </div>
   )
