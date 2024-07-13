@@ -1,24 +1,33 @@
 import React, { useMemo, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { incrementCounter1, incrementCounter2 } from './Redux/MemoFunction/MemoFunctionActions';
 
 export default function MemoFunction() {
-  const [counter1, setCounter1] = useState(0);
-  const [counter2, setCounter2] = useState(0);
+  const { counter1, counter2 } = useSelector((state) => {
+    const { memoReducer } = state;
+    return {
+      counter1: memoReducer.counter1,
+      counter2: memoReducer.counter2,
+    };
+  });
+
+  const dispatch = useDispatch();
 
   const IncrementCounter1 = () => {
-    setCounter1(counter1 + 1);
+    dispatch(incrementCounter1());
   }
 
   const IncrementCounter2 = () => {
-    setCounter2(counter2 + 1);
+    dispatch(incrementCounter2());
   }
 
   const isEvenForCounter1 = useMemo(() => {
-    console.log('triggering increment counter 1')
+    console.log('triggering increment counter 1');
     return counter1 % 2 === 0;
   }, [counter1]);
 
   const isEvenForCounter2 = useMemo(() => {
-    console.log('triggering increment counter 2')
+    console.log('triggering increment counter 2');
     return counter2 % 2 === 0;
   }, [counter2]);
 

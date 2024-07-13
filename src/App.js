@@ -1,4 +1,5 @@
 import React, { createContext } from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
 import Signup from './components/Signup';
 import MemoFunction from './components/MemoFunction';
@@ -6,6 +7,8 @@ import Context from './components/Context';
 import Parent from './components/UseCallback/Parent';
 import UseContext from './components/UseContext';
 import UserRef from './components/UseRef';
+import store from './components/Redux/Store';
+
 const MyContext = createContext();
 
 /* create context, provider, consumer */
@@ -18,14 +21,16 @@ export default function App() {
   }
   return (
     <div>
-      <MyContext.Provider value={obj}>
+      <Provider store={store}>
+        {/* <MyContext.Provider value={obj}> */}
         {/* <Signup /> */}
         {/* <Context /> */}
         {/* <MemoFunction /> */}
-        {/* <Parent /> */}
+        <Parent />
         {/* <UseContext /> */}
-        <UserRef />
-      </MyContext.Provider>
+        {/* <UserRef /> */}
+        {/* </MyContext.Provider> */}
+      </Provider>
     </div>
   )
 };

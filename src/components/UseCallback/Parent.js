@@ -1,23 +1,30 @@
 import React, { useCallback, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { incrementCount, decrementCount } from '../Redux/useCallBack/UseCallbackActions';
 import Child from './Child';
 
 export default function Parent() {
-    const [count, setCount] = useState(0);
+    const count = useSelector(state => {
+        const { useCallbackReducer } = state;
+        return useCallbackReducer.count;
+    });
 
-    const incrementCount = useCallback(() => {
-        setCount(pevCount => pevCount + 1);
-    }, []);
+    const dispatch = useDispatch();
 
-    const decrementCount = useCallback(() => {
-        setCount(prevCount => prevCount - 1);
-    }, []);
+    const incCount = useCallback(() => {
+        dispatch(incrementCount());
+    }, [dispatch]);
+
+    const decCount = useCallback(() => {
+        dispatch(decrementCount());
+    }, [dispatch]);
 
     return (
         <div style={{ textAlign: 'center' }}>
             <h1>{count}</h1>
             <Child
-                incrementCount={incrementCount}
-                decrementCount={decrementCount}
+                incrementCount={incCount}
+                decrementCount={decCount}
             />
         </div>
     )
