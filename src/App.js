@@ -8,6 +8,8 @@ import Parent from './components/UseCallback/Parent';
 import UseContext from './components/UseContext';
 import UserRef from './components/UseRef';
 import store from './components/Redux/Store';
+import FormComponent from './components/Form';
+import TodoList from './components/TodoList';
 
 const MyContext = createContext();
 
@@ -26,7 +28,9 @@ export default function App() {
         {/* <Signup /> */}
         {/* <Context /> */}
         {/* <MemoFunction /> */}
-        <Parent />
+        {/* <Parent /> */}
+        {/* <FormComponent/> */}
+        <TodoList/>
         {/* <UseContext /> */}
         {/* <UserRef /> */}
         {/* </MyContext.Provider> */}
